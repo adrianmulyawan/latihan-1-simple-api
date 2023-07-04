@@ -5,6 +5,7 @@ var logger = require('morgan');
 const cors = require('cors');
 
 var indexRouter = require('./routes/index');
+const todoRoute = require('./routes/todo.route');
 
 var app = express();
 
@@ -18,5 +19,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(indexRouter);
+app.use(todoRoute);
 
 module.exports = app;
